@@ -1,0 +1,18 @@
+creator = "andrewreynerwibowo"
+projectName = "forumbackend"
+userTableName = "User"
+modelName = "User"
+createdBy = False
+createdDate = True
+lastModifiedBy = False
+lastModifiedDate = True
+path = "../forum-backend/src/main/java/com/" + creator + "/" + projectName
+modelAttr = [
+    {"name": "username", "dataType": "String"},
+    {"name": "password", "dataType": "String"},
+    {"name": "email", "dataType": "String"},
+    {"name": "name", "dataType": "String"},
+    {"name": "gender", "dataType": "String"},
+    {"name": "dob", "dataType": "Date"},
+    {"name": "profilePicture", "dataType": "String"}
+]

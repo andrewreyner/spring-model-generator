@@ -3,9 +3,9 @@ creator = "andrewreynerwibowo"
 projectName = "forumbackend"
 userTableName = "User"
 modelName = "User"
-createdBy = True
+createdBy = False
 createdDate = True
-lastModifiedBy = True
+lastModifiedBy = False
 lastModifiedDate = True
 path = "../forum-backend/src/main/java/com/" + creator + "/" + projectName
 modelAttr = [
@@ -35,6 +35,14 @@ def getAuditImport():
     if lastModifiedDate: auditImport += ("import org.springframework.data.annotation.LastModifiedDate;" + "\n")
     return auditImport
 
+def getAuditGetterSetter():
+    auditGetterSetter = ""
+    if createdBy: auditGetterSetter += ("\n\tpublic User getCreatedBy() { return createdBy; }" + "\n")
+    if createdDate: auditGetterSetter += ("\n\tpublic Date getCreatedDate() { return createdDate; }" + "\n")
+    if lastModifiedBy: auditGetterSetter += ("\n\tpublic User getCreatedBy() { return lastModifiedBy; }" + "\n")
+    if lastModifiedDate: auditGetterSetter += ("\n\tpublic Date getCreatedBy() { return lastModifiedDate; }" + "\n")
+    return auditGetterSetter
+
 with open(path + "/model/" + modelName + ".java", "w") as model:
     attr = ""
     audit = getAudit()
@@ -54,6 +62,8 @@ with open(path + "/model/" + modelName + ".java", "w") as model:
         if createdDate and extraImportChecker[0] == 0:
             extraImport += "import java.util.Date;" + "\n"
             extraImportChecker[0] = 1
+    
+    getterSetter += getAuditGetterSetter()
 
     model.write(
         "package com." + creator + "." + projectName + ".model;" + "\n" +
