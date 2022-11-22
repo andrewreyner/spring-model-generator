@@ -77,7 +77,7 @@ with open(path + "/model/" + modelName + ".java", "w") as model:
     getterSetter += getAuditGetterSetter()
 
     model.write(
-        "package com." + creator + "." + projectName + ".model;" + "\n" +
+        "package com." + creator + "." + projectNameWithoutDash + ".model;" + "\n" +
         "\n" +
         auditImport + "\n" +
         "import javax.persistence.Entity;" + "\n" +
@@ -99,10 +99,10 @@ with open(path + "/model/" + modelName + ".java", "w") as model:
 
 with open(path + "/controller/" + modelName + "Controller.java", "w") as controller:
     controller.write(
-        "package com." + creator + "." + projectName + ".controller;" + "\n" +
+        "package com." + creator + "." + projectNameWithoutDash + ".controller;" + "\n" +
         "\n" +
-        "import com.andrewreynerwibowo.forumbackend.model." + modelName + ";" + "\n" +
-        "import com.andrewreynerwibowo.forumbackend.service." + modelName + "Service;" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".model." + modelName + ";" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".service." + modelName + "Service;" + "\n" +
         "import org.springframework.beans.factory.annotation.Autowired;" + "\n" +
         "import org.springframework.web.bind.annotation.*;" + "\n" +
         "\n" +
@@ -128,9 +128,9 @@ with open(path + "/controller/" + modelName + "Controller.java", "w") as control
 
 with open(path + "/repository/" + modelName + "Repository.java", "w") as repository:
     repository.write(
-        "package com." + creator + "." + projectName + ".repository;" + "\n" +
+        "package com." + creator + "." + projectNameWithoutDash + ".repository;" + "\n" +
         "\n" +
-        "import com.andrewreynerwibowo.forumbackend.model." + modelName + ";" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".model." + modelName + ";" + "\n" +
         "import org.springframework.data.jpa.repository.JpaRepository;" + "\n" +
         "import org.springframework.stereotype.Repository;" + "\n" +
         "\n" +
@@ -140,9 +140,9 @@ with open(path + "/repository/" + modelName + "Repository.java", "w") as reposit
 
 with open(path + "/service/" + modelName + "Service.java", "w") as service:
     service.write(
-        "package com." + creator + "." + projectName + ".service;" + "\n" +
+        "package com." + creator + "." + projectNameWithoutDash + ".service;" + "\n" +
         "\n" +
-        "import com.andrewreynerwibowo.forumbackend.model." + modelName + ";" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".model." + modelName + ";" + "\n" +
         "\n" +
         "import java.util.List;" + "\n" +
         "\n" +
@@ -154,10 +154,10 @@ with open(path + "/service/" + modelName + "Service.java", "w") as service:
 
 with open(path + "/service/" + modelName + "ServiceImpl.java", "w") as controller:
     controller.write(
-        "package com." + creator + "." + projectName + ".service;" + "\n" +
+        "package com." + creator + "." + projectNameWithoutDash + ".service;" + "\n" +
         "\n" +
-        "import com.andrewreynerwibowo.forumbackend.model." + modelName + ";" + "\n" +
-        "import com.andrewreynerwibowo.forumbackend.repository." + modelName + "Repository;" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".model." + modelName + ";" + "\n" +
+        "import com." + creator + "." + projectNameWithoutDash + ".repository." + modelName + "Repository;" + "\n" +
         "import org.springframework.beans.factory.annotation.Autowired;" + "\n" +
         "import org.springframework.stereotype.Service;" + "\n" +
         "\n" +
