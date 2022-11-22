@@ -1,23 +1,34 @@
 # !!! v Change This v !!!
-creator = "andrewreynerwibowo"
-projectName = "forumbackend"
+creator = "blitzgoodszz"
+projectName = "quiz-program"
+projectNameWithoutDash = "quizprogram"
 userTableName = "User"
-modelName = "User"
+modelName = "UserRole"
 createdBy = False
-createdDate = True
+createdDate = False
 lastModifiedBy = False
-lastModifiedDate = True
-path = "../forum-backend/src/main/java/com/" + creator + "/" + projectName
+lastModifiedDate = False
+path = "../" + projectName +"/src/main/java/com/" + creator + "/" + projectNameWithoutDash
 modelAttr = [
-    {"name": "username", "dataType": "String"},
-    {"name": "password", "dataType": "String"},
-    {"name": "email", "dataType": "String"},
-    {"name": "name", "dataType": "String"},
-    {"name": "gender", "dataType": "String"},
-    {"name": "dob", "dataType": "Date"},
-    {"name": "profilePicture", "dataType": "String"}
+    {"name": "roleName", "dataType": "String"},
 ]
+# modelAttr = [
+#     {"name": "username", "dataType": "String"},
+#     {"name": "password", "dataType": "String"},
+#     {"name": "email", "dataType": "String"},
+#     {"name": "name", "dataType": "String"},
+#     {"name": "gender", "dataType": "String"},
+#     {"name": "phone", "dataType": "String"},
+#     {"name": "address", "dataType": "String"},
+#     {"name": "dob", "dataType": "Date"},
+#     {"name": "profilePicture", "dataType": "String"}
+# ]
 # !!! ^ Change This ^ !!!
+
+import os
+dirList = ["model", "controller", "repository", "service"]
+for d in dirList:
+    if os.path.exists(path + "/" + d) is False: os.makedirs(path + "/" + d)
 
 def getAudit():
     audit = ""
